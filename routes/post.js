@@ -10,7 +10,7 @@ require("dotenv").config({
   path: "../.env",
 });
 
-router.get("/posts", async (req, res) => {
+router.get("/", async (req, res) => {
   const data = await knex.select("*").from("posts");
   res.status(200).send(data);
 });
