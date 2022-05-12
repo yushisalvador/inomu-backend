@@ -12,6 +12,7 @@ require("dotenv").config({
 });
 
 router.get("/", async (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:8080");
   const data = await knex.select("*").from("posts");
   res.status(200).send(data);
 });
