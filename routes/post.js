@@ -12,14 +12,19 @@ require("dotenv").config({
 });
 
 router.get("/", async (req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://elaborate-selkie-2c0cf3.netlify.app/"
+  );
   const data = await knex.select("*").from("posts");
   res.status(200).send(data);
 });
 
 router.post("/newpost", async (req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
-
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://elaborate-selkie-2c0cf3.netlify.app/"
+  );
   const postObj = {
     username: req.body.username,
     image: req.body.image,
