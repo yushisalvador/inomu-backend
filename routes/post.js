@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/newpost", async (req, res) => {
-  req.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Origin", "*");
   const postObj = {
     username: req.body.username,
     image: req.body.image,
