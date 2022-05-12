@@ -18,6 +18,8 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/newpost", async (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+
   const postObj = {
     username: req.body.username,
     image: req.body.image,
