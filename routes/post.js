@@ -11,20 +11,11 @@ require("dotenv").config({
 });
 
 router.get("/", async (req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
   const data = await knex.select("*").from("posts");
   res.status(200).send(data);
 });
 
 router.post("/newpost", async (req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  const postObj = {
-    username: req.body.username,
-    image: req.body.image,
-    cocktail_name: req.body.cocktail_name,
-    description: req.body.description,
-    recipe: req.body.recipe,
-  };
   console.log("saving", postObj);
   await knex("posts").insert(postObj);
 });
