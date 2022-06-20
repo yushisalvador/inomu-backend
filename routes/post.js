@@ -1,6 +1,5 @@
 const express = require("express");
-const config = require("../knexfile");
-const knex = require("knex")(config);
+const post_controller = require("../controllers/post_controller");
 
 const router = express.Router();
 const cors = require("cors");
@@ -10,14 +9,8 @@ require("dotenv").config({
   path: "../.env",
 });
 
-router.get("/", async (req, res) => {
-  const data = await knex.select("*").from("posts");
-  res.status(200).send(data);
-});
-
-router.post("/newpost", async (req, res) => {
-  console.log("saving", postObj);
-  await knex("posts").insert(postObj);
-});
+router.get("/", post_controller.getAllPosts);
+router.post("/newpost", post_controller.createPost);
+router.delete("/:id", post_controller.deletePost);
 
 module.exports = router;
