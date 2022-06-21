@@ -2,7 +2,7 @@ const config = require("../knexfile");
 const knex = require("knex")(config);
 
 const getAllPosts = () => {
-  return knex.select("*").from(posts);
+  return knex.select("*").from("posts");
 };
 
 const createPost = (post) => {

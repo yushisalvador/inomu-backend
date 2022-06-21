@@ -4,7 +4,7 @@ const knex = require("knex")(config);
 const getAllUsers = () => {
   return knex
     .select({
-      id: "id",
+      user_id: "user_id",
       username: "username",
       email: "email",
     })
@@ -14,7 +14,7 @@ const getAllUsers = () => {
 const getUserByUserName = (name) => {
   return knex
     .select({
-      id: "id",
+      user_id: "user_id",
       email: "email",
       username: "username",
     })
