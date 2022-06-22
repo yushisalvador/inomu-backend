@@ -6,7 +6,7 @@ An application where you can discover cocktail recipes and also share your new d
 
 - NodeJS
 - Express
-- PosreSQL
+- PostgreSQL
 
 ## Getting started
 
